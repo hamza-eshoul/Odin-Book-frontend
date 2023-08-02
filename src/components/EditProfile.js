@@ -48,21 +48,24 @@ const EditProfile = ({ setIsEditProfileActive }) => {
 
     const user_id = user._id;
 
-    const response = await fetch("http://localhost:4000/user/user_info", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user_id,
-        firstName,
-        lastName,
-        email,
-        occupation,
-        education,
-        location,
-      }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/user/user_info",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id,
+          firstName,
+          lastName,
+          email,
+          occupation,
+          education,
+          location,
+        }),
+      }
+    );
 
     const json = await response.json();
 

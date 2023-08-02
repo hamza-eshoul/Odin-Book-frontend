@@ -42,7 +42,7 @@ const EditCoverPhoto = ({
 
     const user_id = user._id;
     const response = await fetch(
-      "http://localhost:4000/user/update_cover_image",
+      "https://odin-book-api-g5zs.onrender.com/user/update_cover_image",
       {
         method: "PUT",
         headers: {

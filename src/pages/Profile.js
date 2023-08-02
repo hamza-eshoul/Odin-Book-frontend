@@ -34,13 +34,16 @@ const Profile = () => {
     const user_id = user._id;
     const friend_id = currentUser._id;
 
-    const response = await fetch("http://localhost:4000/user/add_friend", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ user_id, friend_id }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/user/add_friend",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_id, friend_id }),
+      }
+    );
 
     const json = await response.json();
 
@@ -59,18 +62,21 @@ const Profile = () => {
     const friend_id = currentUser._id;
     const friend_friends_ids = currentUser.friends_ids;
 
-    const response = await fetch("http://localhost:4000/user/unfriend", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user_id,
-        friend_id,
-        user_friends_ids,
-        friend_friends_ids,
-      }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/user/unfriend",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id,
+          friend_id,
+          user_friends_ids,
+          friend_friends_ids,
+        }),
+      }
+    );
 
     const json = await response.json();
 
@@ -106,7 +112,9 @@ const Profile = () => {
     const userId = location.pathname.split("/")[2];
 
     const fetchUserProfile = async () => {
-      const response = await fetch(`http://localhost:4000/user/${userId}`);
+      const response = await fetch(
+        `https://odin-book-api-g5zs.onrender.com/user/${userId}`
+      );
 
       const json = await response.json();
 

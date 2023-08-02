@@ -24,7 +24,7 @@ const ProfileHome = ({ isAddPostActive, setIsAddPostActive }) => {
       const userFriends_ids = currentUser.friends_ids;
 
       const response = await fetch(
-        "http://localhost:4000/user/limited_friends",
+        "https://odin-book-api-g5zs.onrender.com/user/limited_friends",
         {
           method: "POST",
           headers: {
@@ -53,7 +53,7 @@ const ProfileHome = ({ isAddPostActive, setIsAddPostActive }) => {
 
       const fetchUserPosts = async () => {
         const response = await fetch(
-          `http://localhost:4000/post/user_posts/${currentUser_id}`
+          `https://odin-book-api-g5zs.onrender.com/post/user_posts/${currentUser_id}`
         );
 
         const json = await response.json();

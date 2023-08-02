@@ -16,13 +16,16 @@ const ProfileFriends = () => {
       setFriendsLoading(true);
       const userFriends_ids = currentUser.friends_ids;
 
-      const response = await fetch("http://localhost:4000/user/friends", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userFriends_ids }),
-      });
+      const response = await fetch(
+        "https://odin-book-api-g5zs.onrender.com/user/friends",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userFriends_ids }),
+        }
+      );
 
       const json = await response.json();
 

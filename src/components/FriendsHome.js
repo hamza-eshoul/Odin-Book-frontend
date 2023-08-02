@@ -24,7 +24,7 @@ const FriendsHome = () => {
       setUsers([" ", "", " "]);
       setCardStatus("loading");
       const response = await fetch(
-        "http://localhost:4000/user/non_friends_users",
+        "https://odin-book-api-g5zs.onrender.com/user/non_friends_users",
         {
           method: "POST",
           headers: {

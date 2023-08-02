@@ -11,13 +11,16 @@ export const useAddPost = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:4000/post/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ author, content }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/post/create",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ author, content }),
+      }
+    );
 
     const json = await response.json();
 

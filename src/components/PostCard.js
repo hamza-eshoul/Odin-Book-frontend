@@ -22,7 +22,9 @@ const PostCard = ({ author, content, date, post_id, isPostLoading }) => {
 
   useEffect(() => {
     const fetchPostLikes = async () => {
-      const response = await fetch(`http://localhost:4000/post/${post_id}`);
+      const response = await fetch(
+        `https://odin-book-api-g5zs.onrender.com/post/${post_id}`
+      );
 
       const json = await response.json();
 
@@ -42,13 +44,16 @@ const PostCard = ({ author, content, date, post_id, isPostLoading }) => {
 
   useEffect(() => {
     const fetchPostComments = async () => {
-      const response = await fetch("http://localhost:4000/post/comments", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ post_id }),
-      });
+      const response = await fetch(
+        "https://odin-book-api-g5zs.onrender.com/post/comments",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ post_id }),
+        }
+      );
       const json = await response.json();
 
       if (response.ok) {
@@ -89,13 +94,16 @@ const PostCard = ({ author, content, date, post_id, isPostLoading }) => {
   const updatePostLikes = async () => {
     const user_id = user._id;
 
-    const response = await fetch("http://localhost:4000/post/likes", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ post_id, user_id }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/post/likes",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ post_id, user_id }),
+      }
+    );
 
     const json = await response.json();
 

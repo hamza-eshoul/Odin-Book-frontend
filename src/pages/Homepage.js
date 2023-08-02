@@ -26,13 +26,16 @@ const Homepage = ({ isAddPostActive, setIsAddPostActive }) => {
     const fetchRecentPosts = async () => {
       dispatch({ type: "SET_POSTS", payload: [" ", " ", " ", " ", " "] });
       setPageLoading(true);
-      const response = await fetch("http://localhost:4000/post/recent_posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user_and_friends_ids }),
-      });
+      const response = await fetch(
+        "https://odin-book-api-g5zs.onrender.com/post/recent_posts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ user_and_friends_ids }),
+        }
+      );
 
       const json = await response.json();
 

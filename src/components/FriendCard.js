@@ -30,13 +30,16 @@ const FriendCard = ({
     setIsLoading(true);
     const user_id = user._id;
 
-    const response = await fetch("http://localhost:4000/user/add_friend", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ user_id, friend_id }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/user/add_friend",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_id, friend_id }),
+      }
+    );
 
     const json = await response.json();
 
@@ -55,7 +58,7 @@ const FriendCard = ({
     const userSentRequests = user.sent_friends_requests;
 
     const response = await fetch(
-      "http://localhost:4000/user/cancel_friend_request",
+      "https://odin-book-api-g5zs.onrender.com/user/cancel_friend_request",
       {
         method: "POST",
         headers: {
@@ -80,13 +83,16 @@ const FriendCard = ({
     const user_id = user._id;
     const userIncomingRequests = user.incoming_friends_requests;
 
-    const response = await fetch("http://localhost:4000/user/accept_request", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ user_id, friend_id, userIncomingRequests }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/user/accept_request",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_id, friend_id, userIncomingRequests }),
+      }
+    );
 
     const json = await response.json();
 
@@ -103,13 +109,16 @@ const FriendCard = ({
     const user_id = user._id;
     const userIncomingRequests = user.incoming_friends_requests;
 
-    const response = await fetch("http://localhost:4000/user/reject_request", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ user_id, friend_id, userIncomingRequests }),
-    });
+    const response = await fetch(
+      "https://odin-book-api-g5zs.onrender.com/user/reject_request",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_id, friend_id, userIncomingRequests }),
+      }
+    );
 
     const json = await response.json();
 
