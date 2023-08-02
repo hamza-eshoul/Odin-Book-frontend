@@ -18,7 +18,7 @@ const FriendsRequests = () => {
       setIncomingFriendsRequests([" ", " ", " "]);
       setCardStatus("loading");
       const response = await fetch(
-        "https://odin-book-api-g5zs.onrender.com/friends_requests",
+        "https://odin-book-api-g5zs.onrender.com/user/friends_requests",
         {
           method: "POST",
           headers: {
