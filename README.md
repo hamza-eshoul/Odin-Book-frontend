@@ -1,4 +1,4 @@
-## Odin Book Project
+## Odin Book Project Frontend
 
 [![fr](https://img.shields.io/badge/lang-fr-blue)](README.fr.md)
 
