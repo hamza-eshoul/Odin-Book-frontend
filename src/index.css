@@ -2,9 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .auth_label {
+    @apply flex flex-col gap-1;
+  }
+
+  .auth_label_text {
+    @apply -translate-x-[1px] text-[15px] font-medium opacity-70;
+  }
+
+  .auth_input {
+    @apply rounded border-[1px] border-zinc-200 px-2 py-2 shadow-sm outline-mainBlue focus:bg-[#f8fafd] focus:drop-shadow-xl;
+  }
+
+  .form_label {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .auth_btn {
+    @apply rounded bg-mainBlue py-[8px] font-medium text-white transition-opacity duration-300 ease-in-out hover:opacity-70;
+  }
+}
+
+.auth_label:has(input:focus) span {
+  color: darkBlue;
+  opacity: 100;
+}
+
 .active {
-  border-bottom-width: 3px;
-  border-radius: 2px;
-  border-color: blue;
+  border-bottom-width: 1.5px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-color: #0066dd;
   border-style: solid;
 }
